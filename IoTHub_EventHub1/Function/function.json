@@ -1,0 +1,21 @@
+{
+  "bindings": [
+    {
+      "name": "IoTHubMessages",
+      "connection": "KlimostatIoTHub_events_IOTHUB",
+      "eventHubName": "klimostat-workitems",
+      "consumerGroup": "$Default",
+      "cardinality": "one",
+      "direction": "in",
+      "type": "eventHubTrigger"
+    },
+    {
+      "name": "outputCosmosDB",
+      "direction": "out",
+      "type": "cosmosDB",
+      "connectionStringSetting": "cosmosdb-klimostat_DOCUMENTDB3",
+      "databaseName": "klimostat",
+      "collectionName": "measurements"
+    }
+  ]
+}
